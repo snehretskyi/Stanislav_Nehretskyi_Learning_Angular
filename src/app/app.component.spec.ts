@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'Stanislav-Nehretskyi-Learning-Angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Stanislav-Nehretskyi-Learning-Angular');
+    expect(app.name).toEqual('Stanislav-Nehretskyi-Learning-Angular');
   });
 
   it('should render title', () => {
