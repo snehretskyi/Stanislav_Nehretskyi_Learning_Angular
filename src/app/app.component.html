@@ -1,13 +1,11 @@
-<style>
-  h1, p {
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-</style>
-<main>
-  <h1>Welcome, {{ name }}</h1>
-  <p>This is an Angular SPA.</p>
-  <p>Animal of the day: <strong>{{ animalOfTheDay }}</strong></p>
-  <p>Number of the day: <strong>{{ number }}</strong></p>
-  <p>Last time this page was updated is: {{ date }}</p>
-</main>
+<!-- app.component.html -->
+<div class="container">
+  <h2>Personal Data</h2>
+  <div *ngFor="let person of personList" class="person-card">
+    <h3>{{ person.firstName }} {{ person.lastName }}</h3>
+    <p>Age: {{ person.age }}</p>
+    <p *ngIf="person.phoneNumber">Phone: {{ person.phoneNumber }}</p>
+    <p>Email: {{ person.emailAddress }}</p>
+  </div>
+</div>
+

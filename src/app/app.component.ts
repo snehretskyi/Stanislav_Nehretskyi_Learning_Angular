@@ -1,16 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Person } from "./models/person";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgForOf, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  name:string = 'Stanislav';
-  animalOfTheDay:string = "Rhesus Macaque";
-  number:number = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679;
-  date:string = "2024-09-10"
-}
+  title= 'Personal Data';
+  personList: Person[] = //any[] would have worked as well
+    [{firstName: "John", lastName:"Doe", age: 100, emailAddress:"johndoe@yahoo.net"},
+      {firstName: "Jane", lastName:"Doe", age: 3, emailAddress:"N/A"},
+      {firstName: "Patrick", lastName:"Star", age: 20, phoneNumber: "+12345678910", emailAddress:"pstar@gmail.com"},
+      {firstName: "Man", lastName:"In Yellow Hat", age: 45, emailAddress:"yellowhat@zoo.com"},
+      {firstName: "Grzegorz", lastName:"Wisniewski", age: 23, emailAddress:"nirvana@gmail.com"},
+      {firstName: "Alexander", lastName:"Bell", age: 324, phoneNumber: "+1", emailAddress:"N/A"}
+]}

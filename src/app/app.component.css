@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 1em 0;
+}
+.container {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.person-card {
+  box-shadow: 2px 2px 10px black;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+.person-card h3 {
+  font-variant: small-caps;
+}
