@@ -1,2 +1,2 @@
-<app-comment-item *ngFor="let comment of commentArray; odd as isOdd" [comment]="comment" [class]="isOdd ? 'is-odd' : 'is-even'"></app-comment-item>
+<app-comment-item *ngFor="let comment of commentArray; odd as isOdd" [comment]="comment" [ngClass]="isOdd ? 'is-odd' : 'is-even'"></app-comment-item>
 
