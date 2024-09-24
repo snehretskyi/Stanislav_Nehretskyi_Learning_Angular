@@ -20,7 +20,7 @@ export class CommentsListComponent {
       {firstName: "Man", lastName:"In Yellow Hat", nickname: "Man in the yellow hat", emailAddress:"yellowhat@zoo.com"},
       {firstName: "Grzegorz", lastName:"Wisniewski", nickname: "Cherry5431", emailAddress:"nirvana@gmail.com"},
       {firstName: "Alexander", lastName:"Bell", nickname: "Alexander Graham Bell", phoneNumber: "+1", emailAddress:"alexanderbell@arpa.net"}];
-  contentArray:Comment[] = [{author: this.personList[0], body:"Hi", likes:0},
+  commentArray:Comment[] = [{author: this.personList[0], body:"Hi", likes:0},
     {author: this.personList[1], body:"Howdy", likes:0},
     {author: this.personList[2], body:"Hello", likes:0},
     {author: this.personList[3], body:"I like George", likes:3},
