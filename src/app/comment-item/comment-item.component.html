@@ -1,5 +1,5 @@
-<div *ngIf="comment">
-  <p>{{comment.author.nickname}}</p>
+<div *ngIf="comment" class="comment-item">
+  <h3 class="nickname">{{comment.author.nickname}}</h3>
   <p>{{comment.body}}</p>
   <div>{{comment.likes}} likes</div>
 </div>
