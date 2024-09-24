@@ -1,0 +1,9 @@
+.is-even {
+  background-color: lightblue;
+  display: block;
+}
+
+.is-odd {
+  background-color: lightgoldenrodyellow;
+  display: block;
+}

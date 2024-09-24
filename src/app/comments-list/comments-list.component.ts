@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {CommentAuthor} from "../models/comment-author";
 import { Comment } from "../models/comment";
 import {CommentItemComponent} from "../comment-item/comment-item.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-comments-list',
   standalone: true,
   imports: [
-    CommentItemComponent
+    CommentItemComponent,
+    NgForOf
   ],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css'
@@ -22,7 +24,7 @@ export class CommentsListComponent {
       {firstName: "Alexander", lastName:"Bell", nickname: "Alexander Graham Bell", phoneNumber: "+1", emailAddress:"alexanderbell@arpa.net"}];
   commentArray:Comment[] = [{author: this.personList[0], body:"Hi", likes:0},
     {author: this.personList[1], body:"Howdy", likes:0},
-    {author: this.personList[2], body:"Hello", likes:0},
+    {author: this.personList[2], body:"I'm Patrick", likes:1},
     {author: this.personList[3], body:"I like George", likes:3},
     {author: this.personList[4], body:"Hello World", likes:0},
     {author: this.personList[5], body:"Greetings Gentlemen", likes:0}];
