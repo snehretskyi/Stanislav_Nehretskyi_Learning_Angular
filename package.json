@@ -1,12 +1,13 @@
 {
-  "name": "stanislav-nehretskyi-learning-angular",
-  "version": "0.0.0",
+  "name": "my-first-project",
+  "version": "0.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generateInterface": "ng generate interface"
   },
   "private": true,
   "dependencies": {
@@ -19,12 +20,13 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "rxjs": "~7.8.0",
+    "schematics-scss-migrate": "^2.3.17",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.3",
-    "@angular/cli": "^18.2.3",
+    "@angular-devkit/build-angular": "^18.2.0",
+    "@angular/cli": "^18.2.0",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.2.0",
