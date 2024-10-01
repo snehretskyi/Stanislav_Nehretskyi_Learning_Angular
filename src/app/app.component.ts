@@ -3,14 +3,28 @@ import { RouterOutlet } from '@angular/router';
 import { CommentAuthor } from "./models/comment-author";
 import {NgForOf, NgIf} from "@angular/common";
 import {CommentsListComponent} from "./comments-list/comments-list.component";
+import {CommentItemComponent} from "./comment-item/comment-item.component";
+import {CommentService} from "./services/comment.service";
+import {Comment} from "./models/comment";
+import {commentArray} from "./data/mock-content";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, CommentsListComponent],
+  imports: [RouterOutlet, NgForOf, NgIf, CommentsListComponent, CommentItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title= 'Personal Data';
+  commentId:number = 6;
+  commentOfTheDay: Comment | undefined;
+
+  constructor(private commentService:CommentService) {
+  }
+
+  ngOnInit() {
+    this.commentService.getCommentById(this.commentId).subscribe(comment => this.commentOfTheDay = comment);
+  }
 }
