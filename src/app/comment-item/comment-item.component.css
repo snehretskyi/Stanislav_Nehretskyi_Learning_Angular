@@ -1,0 +1,14 @@
+.comment-item {
+  border: 2px solid;
+  margin: 25px 0;
+}
+
+.comment-author-info {
+  display: flex;
+  flex-direction: row;
+}
+img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 20px;
+}
