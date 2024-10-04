@@ -1,2 +1,6 @@
-<app-comment-item *ngFor="let comment of commentArray; odd as isOdd" [comment]="comment" [ngClass]="isOdd ? 'is-odd' : 'is-even'"></app-comment-item>
+<section>
+  <h1>Selected comment:</h1>
+  <app-comment-item [comment]="selectedComment" [ngClass]="'selectedComment'"></app-comment-item>
+</section>
+<app-comment-item *ngFor="let comment of commentArray; odd as isOdd" [comment]="comment" [ngClass]="isOdd ? 'is-odd' : 'is-even'" (click) = "selectComment(comment)"></app-comment-item>
 

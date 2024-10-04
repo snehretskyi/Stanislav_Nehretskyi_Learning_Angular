@@ -21,11 +21,23 @@ export class CommentsListComponent {
   constructor(private commentService:CommentService) {
   }
 
+  commentId:number = 6;
+
+  selectedComment: Comment | undefined;
+
+
   ngOnInit() {
     this.commentService.getComments().subscribe({
       next: (data: Comment[]) => this.commentArray = data,
       error:err => console.error("UH OH! Error fetching Comments!", err),
       complete:() => console.log("Comments fetched!")
-    })
+    });
+
+
+    this.commentService.getCommentById(this.commentId).subscribe(comment => this.selectedComment = comment);
+  }
+
+  selectComment (comment:Comment):void {
+    this.selectedComment = comment;
   }
 }

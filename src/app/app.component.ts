@@ -18,13 +18,10 @@ import {Observable} from "rxjs";
 })
 export class AppComponent {
   title= 'Personal Data';
-  commentId:number = 6;
-  commentOfTheDay: Comment | undefined;
 
   constructor(private commentService:CommentService) {
   }
 
   ngOnInit() {
-    this.commentService.getCommentById(this.commentId).subscribe(comment => this.commentOfTheDay = comment);
   }
 }
