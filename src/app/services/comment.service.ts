@@ -20,7 +20,7 @@ export class CommentService {
     return of(student);
   }
 
-  addComment(newComment:Comment) : Observable<Comment[]>{
+  addComment(newComment: Comment) : Observable<Comment[]>{
     this.comments.push(newComment)
     return of(this.comments);
   }
