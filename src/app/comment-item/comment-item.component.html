@@ -1,4 +1,4 @@
-<div *ngIf="comment" class="comment-item">
+<div *ngIf="comment" class="comment-item" routerLinkActive="active">
   <div class="comment-author-info">
     <img ngSrc="{{comment.author.profileImageURL}}" width="50" height="50" alt="">
     <h3 class="nickname">{{comment.author.nickname}}</h3>
