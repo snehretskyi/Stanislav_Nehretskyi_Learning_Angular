@@ -15,5 +15,5 @@ const routes: Routes = [
   {path: '**', component:PageNotFoundComponent}//Wildcard route for a 404 page
 ];
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(AppComponent, {providers: [provideRouter(routes)]})
   .catch((err) => console.error(err));

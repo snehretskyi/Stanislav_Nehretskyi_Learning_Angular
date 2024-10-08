@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {Comment} from "../models/comment";
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-comment-item',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
   templateUrl: './comment-item.component.html',
   styleUrl: './comment-item.component.css'

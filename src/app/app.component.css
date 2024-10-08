@@ -2,3 +2,25 @@
   margin: 0;
   padding: 0;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  background-color: cornflowerblue;
+  transition: 0.1s;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+
+nav a:first-child {
+  margin-right: 40px;
+}
