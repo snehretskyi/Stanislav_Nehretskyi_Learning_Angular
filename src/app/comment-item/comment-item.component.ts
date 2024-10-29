@@ -3,6 +3,7 @@ import {Comment} from "../models/comment";
 import {NgIf, NgOptimizedImage} from "@angular/common";
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {CommentService} from "../services/comment.service";
+import {CommentsListComponent} from "../comments-list/comments-list.component";
 
 @Component({
   selector: 'app-comment-item',
@@ -21,7 +22,8 @@ export class CommentItemComponent {
 
   constructor(private route: ActivatedRoute,
               private commentService: CommentService,
-              private router:Router) {
+              private router:Router,
+              private commentsList:CommentsListComponent) {
   }
 
   ngOnInit() {
@@ -35,7 +37,11 @@ export class CommentItemComponent {
 
   onDelete() {
     if (this.comment) {
-      this.commentService.deleteComment(this.comment.id).subscribe(() => this.router.navigate(["/comments"]));
+      this.commentService.deleteComment(this.comment.id)
+      this.router.navigate(["/comments"]);
+
+      // refreshing the page on deletion
+      this.commentsList.ngOnInit();
     }
   }
 }

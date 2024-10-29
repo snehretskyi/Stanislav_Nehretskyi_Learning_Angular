@@ -33,9 +33,8 @@ export class CommentService {
     return of(this.comments);
   }
 
-  deleteComment(commentId: number): Observable<Comment[]> {
+  deleteComment(commentId: number): void {
     this.comments = this.comments.filter((comment) => comment.id !== commentId);
-    return of(this.comments);
   }
 
   generateNewId() {
