@@ -38,4 +38,8 @@ export class CommentService {
     return of(this.comments);
   }
 
+  generateNewId() {
+    return this.comments.length > 0 ? Math.max(...this.comments.map(comment => comment.id)) + 1 : 1;
+  }
+
 }

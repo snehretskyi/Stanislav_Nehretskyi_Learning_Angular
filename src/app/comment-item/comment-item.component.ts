@@ -1,17 +1,18 @@
 import {Component, Input} from '@angular/core';
 import {Comment} from "../models/comment";
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {ActivatedRoute, RouterLinkActive} from "@angular/router";
+import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
 import {CommentService} from "../services/comment.service";
 
 @Component({
   selector: 'app-comment-item',
   standalone: true,
-  imports: [
-    NgIf,
-    NgOptimizedImage,
-    RouterLinkActive
-  ],
+    imports: [
+        NgIf,
+        NgOptimizedImage,
+        RouterLinkActive,
+        RouterLink
+    ],
   templateUrl: './comment-item.component.html',
   styleUrl: './comment-item.component.css'
 })
