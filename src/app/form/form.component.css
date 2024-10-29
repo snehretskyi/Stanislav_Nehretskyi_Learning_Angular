@@ -48,3 +48,8 @@ button[type="button"] {
 button[type="button"]:last-of-type {
   background-color: #DC3545;
 }
+
+.error {
+  text-align: center;
+  color: red;
+}
