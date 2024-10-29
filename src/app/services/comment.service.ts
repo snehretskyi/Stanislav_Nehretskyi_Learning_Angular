@@ -12,7 +12,7 @@ export class CommentService {
   constructor() { }
 
   getComments():Observable<Comment[]> {
-    return of(commentArray);
+    return of(this.comments);
   }
 
   getCommentById(commentId: number): Observable<Comment | undefined> {
