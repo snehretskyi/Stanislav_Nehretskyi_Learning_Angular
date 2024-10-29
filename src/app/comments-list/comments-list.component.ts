@@ -5,6 +5,7 @@ import {CommentItemComponent} from "../comment-item/comment-item.component";
 import {CommentService} from "../services/comment.service";
 import {NgClass, NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
+import {FormComponent} from "../form/form.component";
 
 @Component({
   selector: 'app-comments-list',
@@ -13,7 +14,8 @@ import {RouterLink} from "@angular/router";
     CommentItemComponent,
     NgForOf,
     NgClass,
-    RouterLink
+    RouterLink,
+    FormComponent
   ],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css'

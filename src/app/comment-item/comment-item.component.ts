@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Comment} from "../models/comment";
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {CommentService} from "../services/comment.service";
 
 @Component({
@@ -20,7 +20,8 @@ export class CommentItemComponent {
   @Input() comment: Comment | undefined;
 
   constructor(private route: ActivatedRoute,
-              private commentService: CommentService) {
+              private commentService: CommentService,
+              private router:Router) {
   }
 
   ngOnInit() {
@@ -29,6 +30,12 @@ export class CommentItemComponent {
       this.commentService.getCommentById(Number(id)).subscribe(comment =>{
         this.comment = comment;
       })
+    }
+  }
+
+  onDelete() {
+    if (this.comment) {
+      this.commentService.deleteComment(this.comment.id).subscribe(() => this.router.navigate(["/comments"]));
     }
   }
 }

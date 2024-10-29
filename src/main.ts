@@ -10,7 +10,7 @@ import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.compone
 const routes: Routes = [
   {path:'', redirectTo: '/comments', pathMatch: 'full'}, //default route
   { path: 'comments', component: CommentsListComponent },
-  { path: 'comments/:id', component: CommentItemComponent },
+  { path: 'modify-comment/:id', component: ModifyCommentComponent },
   {path:'modify-comment', component: ModifyCommentComponent},
   {path: '**', component:PageNotFoundComponent}//Wildcard route for a 404 page
 ];
