@@ -21,5 +21,6 @@ const routes: Routes = [
 
 // I changed delay because 1000ms is too slow
 bootstrapApplication(AppComponent, {providers: [ provideHttpClient(), provideRouter(routes),
-    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }))]})
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }))
+    ]})
   .catch((err) => console.error(err));

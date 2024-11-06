@@ -16,3 +16,8 @@ section {
   background-color: linen;
   display: block;
 }
+
+.error {
+  text-align: center;
+  color: red;
+}

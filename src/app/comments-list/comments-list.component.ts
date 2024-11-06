@@ -3,7 +3,7 @@ import {CommentAuthor} from "../models/comment-author";
 import { Comment } from "../models/comment";
 import {CommentItemComponent} from "../comment-item/comment-item.component";
 import {CommentService} from "../services/comment.service";
-import {NgClass, NgForOf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {FormComponent} from "../form/form.component";
 
@@ -15,7 +15,8 @@ import {FormComponent} from "../form/form.component";
     NgForOf,
     NgClass,
     RouterLink,
-    FormComponent
+    FormComponent,
+    NgIf
   ],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css'
@@ -26,6 +27,7 @@ export class CommentsListComponent {
   }
 
   commentId:number = 6;
+  error?:string;
 
   selectedComment: Comment | undefined;
 
@@ -33,7 +35,7 @@ export class CommentsListComponent {
   ngOnInit() {
     this.commentService.getComments().subscribe({
       next: (data: Comment[]) => this.commentArray = data,
-      error:err => console.error("UH OH! Error fetching Comments!", err),
+      error:err => this.error = "Error fetching Comments!",
       complete:() => console.log("Comments fetched!")
     });
 

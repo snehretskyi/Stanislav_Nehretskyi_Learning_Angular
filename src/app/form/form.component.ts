@@ -48,7 +48,7 @@ export class FormComponent {
   ngOnInit() {
     this.authorService.getAuthors().subscribe({
       next: (data: CommentAuthor[]) => this.authorsArray = data,
-      error: err => console.error("UH OH! Error fetching Comments!", err),
+      error: err => this.error = "Error fetching Authors!",
       complete: () => console.log("Comments fetched!")
     });
 
@@ -71,10 +71,14 @@ export class FormComponent {
   onSubmit() {
     if (this.commentForm.valid && this.isUpdate) {
       const newComment:Comment = this.commentForm.value;
-      this.commentService.updateComment(newComment).subscribe(() => this.router.navigate(["/comments"]));
+      this.commentService.updateComment(newComment).subscribe({
+        error:err => this.error = "Error Updating Comment!",
+      });
     } else if (this.commentForm.valid) {
       const newComment:Comment = this.commentForm.value;
-      this.commentService.addComment(newComment).subscribe(() => this.router.navigate(["/comments"]));
+      this.commentService.addComment(newComment).subscribe({
+        error:err => this.error = "Error Adding Comment!",
+      });
     } else {
       this.error = "The form is invalid!";
     }
