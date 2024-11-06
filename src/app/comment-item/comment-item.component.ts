@@ -37,8 +37,7 @@ export class CommentItemComponent {
 
   onDelete() {
     if (this.comment) {
-      this.commentService.deleteComment(this.comment.id)
-      this.router.navigate(["/comments"]);
+      this.commentService.deleteComment(this.comment.id).subscribe(() => this.router.navigate(["/comments"]));
 
       // refreshing the page on deletion
       this.commentsList.ngOnInit();

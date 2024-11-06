@@ -1,44 +1,47 @@
 import { Injectable } from '@angular/core';
 import { commentArray } from "../data/mock-content"
-import {Observable, of} from "rxjs";
+import {catchError, Observable, of, throwError} from "rxjs";
 import { Comment } from "../models/comment";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
+  private apiUrl = 'api/commentArray';
   private comments:Comment[] = commentArray;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
 
   getComments():Observable<Comment[]> {
-    return of(this.comments);
+    return this.http.get<Comment[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
-  getCommentById(commentId: number): Observable<Comment | undefined> {
-    const student = this.comments.find(comment => comment.id === commentId);
-    return of(student);
+  getCommentById(commentId: number): Observable<Comment> {
+    return this.http.get<Comment>(`${this.apiUrl}/${commentId}`).pipe(catchError(this.handleError));
   }
 
-  addComment(newComment: Comment) : Observable<Comment[]>{
-    this.comments.push(newComment)
-    return of(this.comments);
+  addComment(newComment: Comment) : Observable<Comment>{
+    newComment.id = this.generateNewId();
+    return this.http.post<Comment>(this.apiUrl, newComment).pipe(catchError(this.handleError));
   }
 
-  updateComment(updatedComment: Comment): Observable<Comment[]> {
-    const index = this.comments.findIndex(comment => comment.id === updatedComment.id);
-    if (index !== -1) {
-      this.comments[index] = updatedComment;
-    }
-    return of(this.comments);
+  updateComment(updatedComment: Comment): Observable<Comment | undefined> {
+    return this.http.put<Comment>(`${this.apiUrl}/${updatedComment.id}`, updatedComment).pipe(catchError(this.handleError));
   }
 
-  deleteComment(commentId: number): void {
-    this.comments = this.comments.filter((comment) => comment.id !== commentId);
+  deleteComment(commentId: number): Observable<Comment> {
+    return this.http.delete<Comment>(`${this.apiUrl}/${commentId}`).pipe(catchError(this.handleError));
   }
 
   generateNewId() {
     return this.comments.length > 0 ? Math.max(...this.comments.map(comment => comment.id)) + 1 : 1;
+  }
+
+  handleError(error: HttpErrorResponse) {
+    console.error("API error! :-(")
+    return throwError(() => {Error(error.message || "Server Error")});
   }
 
 }
