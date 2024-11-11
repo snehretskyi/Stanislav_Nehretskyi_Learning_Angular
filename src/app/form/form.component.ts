@@ -72,11 +72,13 @@ export class FormComponent {
     if (this.commentForm.valid && this.isUpdate) {
       const newComment:Comment = this.commentForm.value;
       this.commentService.updateComment(newComment).subscribe({
+        next:() => this.router.navigate(["/comments"]),
         error:err => this.error = "Error Updating Comment!",
       });
     } else if (this.commentForm.valid) {
       const newComment:Comment = this.commentForm.value;
       this.commentService.addComment(newComment).subscribe({
+        next:() => this.router.navigate(["/comments"]),
         error:err => this.error = "Error Adding Comment!",
       });
     } else {
