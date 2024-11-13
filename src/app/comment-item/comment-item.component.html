@@ -3,7 +3,7 @@
     <img ngSrc="{{comment.author.profileImageURL}}" width="50" height="50" alt="">
     <h3 class="nickname">{{comment.author.nickname | titlecase}}</h3>
   </div>
-  <p>{{comment.body}}</p>
+  <p>{{comment.body | commentPunctuation}}</p>
   <div>{{comment.likes}} likes</div>
   <p class="comment-date">Created at: {{comment.commentDate | date:"short"}}</p>
   <p *ngIf="comment.tip" id="tip">The comment has been tipped with {{comment.tip | currency}}</p>

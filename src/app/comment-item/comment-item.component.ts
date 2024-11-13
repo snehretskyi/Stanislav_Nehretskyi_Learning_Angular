@@ -4,6 +4,7 @@ import {CurrencyPipe, DatePipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCase
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {CommentService} from "../services/comment.service";
 import {CommentsListComponent} from "../comments-list/comments-list.component";
+import {CommentPunctuationPipe} from "../pipes/comment-punctuation.pipe";
 
 @Component({
   selector: 'app-comment-item',
@@ -16,7 +17,8 @@ import {CommentsListComponent} from "../comments-list/comments-list.component";
     UpperCasePipe,
     TitleCasePipe,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    CommentPunctuationPipe
   ],
   templateUrl: './comment-item.component.html',
   styleUrl: './comment-item.component.css'
