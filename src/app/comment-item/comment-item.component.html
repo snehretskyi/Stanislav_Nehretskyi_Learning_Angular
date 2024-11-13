@@ -1,10 +1,12 @@
 <div *ngIf="comment" class="comment-item" routerLinkActive="active">
   <div class="comment-author-info">
     <img ngSrc="{{comment.author.profileImageURL}}" width="50" height="50" alt="">
-    <h3 class="nickname">{{comment.author.nickname}}</h3>
+    <h3 class="nickname">{{comment.author.nickname | titlecase}}</h3>
   </div>
   <p>{{comment.body}}</p>
   <div>{{comment.likes}} likes</div>
+  <p class="comment-date">Created at: {{comment.commentDate | date:"short"}}</p>
+  <p *ngIf="comment.tip" id="tip">The comment has been tipped with {{comment.tip | currency}}</p>
     <button [routerLink]="['/modify-comment',comment.id ]">Edit</button>
     <button (click)="onDelete()">Delete</button>
 </div>

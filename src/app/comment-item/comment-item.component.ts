@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Comment} from "../models/comment";
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {CommentService} from "../services/comment.service";
 import {CommentsListComponent} from "../comments-list/comments-list.component";
@@ -8,12 +8,16 @@ import {CommentsListComponent} from "../comments-list/comments-list.component";
 @Component({
   selector: 'app-comment-item',
   standalone: true,
-    imports: [
-        NgIf,
-        NgOptimizedImage,
-        RouterLinkActive,
-        RouterLink
-    ],
+  imports: [
+    NgIf,
+    NgOptimizedImage,
+    RouterLinkActive,
+    RouterLink,
+    UpperCasePipe,
+    TitleCasePipe,
+    DatePipe,
+    CurrencyPipe
+  ],
   templateUrl: './comment-item.component.html',
   styleUrl: './comment-item.component.css'
 })

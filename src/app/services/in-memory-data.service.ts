@@ -3,6 +3,7 @@ import {InMemoryDbService} from "angular-in-memory-web-api";
 import {CommentAuthor} from "../models/comment-author";
 import {Comment} from "../models/comment";
 import {Observable} from "rxjs";
+import {personList} from "../data/mock-content";
 
 class RequestInfo_2 {
 }
@@ -31,12 +32,12 @@ export class InMemoryDataService implements InMemoryDbService {
         {id: 6, firstName: "Alexander", lastName:"Bell", nickname: "Alexander Graham Bell",
           profileImageURL:"assets/Alexander_Graham_Bell.jpg",
           phoneNumber: "+1", emailAddress:"alexanderbell@arpa.net"}];
-    const commentArray:Comment[] = [{id: 1, author: personList[0], body:"Hi", likes:0},
-      {id: 2, author: personList[1], body:"Howdy", likes:0},
-      {id: 3, author: personList[2], body:"Hello", likes:0},
-      {id: 4, author: personList[3], body:"I like George", likes:3},
-      {id: 5, author: personList[4], body:"Hello World", likes:0},
-      {id: 6, author: personList[5], body:"Greetings Gentlemen", likes:0}];
+    const commentArray:Comment[] = [{id: 1, author: personList[0], body:"Hi", likes:0, commentDate: new Date()},
+      {id: 2, author: personList[1], body:"Howdy", likes:0, commentDate: new Date()},
+      {id: 3, author: personList[2], body:"Hello", likes:0, commentDate: new Date()},
+      {id: 4, author: personList[3], body:"I like George", likes:3, commentDate: new Date()},
+      {id: 5, author: personList[4], body:"Hello World", likes:0, commentDate: new Date()},
+      {id: 6, author: personList[5], body:"Greetings Gentlemen", likes:0, commentDate: new Date(), tip:100}];
     return {commentArray, personList};
   }
 

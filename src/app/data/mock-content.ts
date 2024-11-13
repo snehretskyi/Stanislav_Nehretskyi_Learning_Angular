@@ -20,9 +20,9 @@ export const personList: CommentAuthor[] = //any[] would have worked as well
     {id: 6, firstName: "Alexander", lastName:"Bell", nickname: "Alexander Graham Bell",
       profileImageURL:"assets/Alexander_Graham_Bell.jpg",
       phoneNumber: "+1", emailAddress:"alexanderbell@arpa.net"}];
-export const commentArray:Comment[] = [{id: 1, author: personList[0], body:"Hi", likes:0},
-  {id: 2, author: personList[1], body:"Howdy", likes:0},
-  {id: 3, author: personList[2], body:"Hello", likes:0},
-  {id: 4, author: personList[3], body:"I like George", likes:3},
-  {id: 5, author: personList[4], body:"Hello World", likes:0},
-  {id: 6, author: personList[5], body:"Greetings Gentlemen", likes:0}];
+export const commentArray:Comment[] = [{id: 1, author: personList[0], body:"Hi", likes:0, commentDate: new Date()},
+  {id: 2, author: personList[1], body:"Howdy", likes:0, commentDate: new Date()},
+  {id: 3, author: personList[2], body:"Hello", likes:0, commentDate: new Date()},
+  {id: 4, author: personList[3], body:"I like George", likes:3, commentDate: new Date()},
+  {id: 5, author: personList[4], body:"Hello World", likes:0, commentDate: new Date()},
+  {id: 6, author: personList[5], body:"Greetings Gentlemen", likes:0, commentDate: new Date()}];

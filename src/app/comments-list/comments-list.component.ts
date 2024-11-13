@@ -3,7 +3,7 @@ import {CommentAuthor} from "../models/comment-author";
 import { Comment } from "../models/comment";
 import {CommentItemComponent} from "../comment-item/comment-item.component";
 import {CommentService} from "../services/comment.service";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {FormComponent} from "../form/form.component";
 
@@ -16,7 +16,9 @@ import {FormComponent} from "../form/form.component";
     NgClass,
     RouterLink,
     FormComponent,
-    NgIf
+    NgIf,
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css'
@@ -28,6 +30,8 @@ export class CommentsListComponent {
 
   commentId:number = 6;
   error?:string;
+
+  prizeForWinner:number = 100;
 
   selectedComment: Comment | undefined;
 

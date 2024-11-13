@@ -4,5 +4,7 @@ export interface Comment {
   id:number,
   author: CommentAuthor,
   body:string,
-  likes:number
+  likes:number,
+  commentDate:Date,
+  tip?:number
 }
