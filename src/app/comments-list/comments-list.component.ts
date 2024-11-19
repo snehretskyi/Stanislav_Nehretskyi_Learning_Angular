@@ -6,6 +6,7 @@ import {CommentService} from "../services/comment.service";
 import {CurrencyPipe, DatePipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {FormComponent} from "../form/form.component";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-comments-list',
@@ -18,7 +19,8 @@ import {FormComponent} from "../form/form.component";
     FormComponent,
     NgIf,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    HoverHighlightDirective
   ],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css'
