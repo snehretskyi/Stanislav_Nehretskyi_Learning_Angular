@@ -1,12 +1,12 @@
 <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" />
+    <input type="number" id="id" formControlName="id" [appHighlightOnFocus] = "'red'" />
   </div>
 
   <div class="form-group">
     <label for="author">Author</label>
-    <select id="author" formControlName="author">
+    <select id="author" formControlName="author" [appHighlightOnFocus] = "'lime'">
       <option *ngFor="let author of authorsArray" [ngValue]="author">
         {{author.nickname}}
       </option>
@@ -16,12 +16,12 @@
 
   <div class="form-group">
     <label for="body">Body</label>
-    <textarea type="text" id="body" formControlName="body"></textarea>
+    <textarea type="text" id="body" formControlName="body" appHighlightOnFocus [appHighlightOnFocus] = "'blue'"></textarea>
   </div>
 
   <div class="form-group">
     <label for="likes">Likes</label>
-    <input type="number" id="likes" formControlName="likes" />
+    <input type="number" id="likes" formControlName="likes" appHighlightOnFocus [appHighlightOnFocus] = "'orange'"/>
   </div>
 
   <button type="submit">Submit</button>

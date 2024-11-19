@@ -7,6 +7,7 @@ import {CommentsListComponent} from "../comments-list/comments-list.component";
 import {CommentAuthor} from "../models/comment-author";
 import {NgForOf, NgIf} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-form',
@@ -16,7 +17,8 @@ import {ActivatedRoute, Router} from "@angular/router";
     ReactiveFormsModule,
     ReactiveFormsModule,
     NgForOf,
-    NgIf
+    NgIf,
+    HighlightOnFocusDirective
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
