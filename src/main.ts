@@ -8,6 +8,7 @@ import {provideHttpClient} from "@angular/common/http";
 import {importProvidersFrom} from "@angular/core";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./app/services/in-memory-data.service";
+import {MAT_DIALOG_DEFAULT_OPTIONS} from "@angular/material/dialog";
 
 const routes: Routes = [
   {path:'', redirectTo: '/comments', pathMatch: 'full'}, //default route
@@ -19,6 +20,7 @@ const routes: Routes = [
 
 // I changed delay because 1000ms is too slow
 bootstrapApplication(AppComponent, {providers: [ provideHttpClient(), provideRouter(routes),
-    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }))
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 })),
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
     ]})
   .catch((err) => console.error(err));
