@@ -1,7 +1,12 @@
 <script src="comments-list.component.spec.ts"></script>
-<section>
-  <h1>Selected comment:</h1>
-  <app-comment-item [comment]="selectedComment" [ngClass]="'selectedComment'" [appHoverHighlight]="'lightpink'"></app-comment-item>
-</section>
+<mat-card>
+  <mat-icon>today</mat-icon>
+  <mat-card-title>Selected comment:</mat-card-title>
+  <mat-card-content> <app-comment-item [comment]="selectedComment" [ngClass]="'selectedComment'" [appHoverHighlight]="'lightpink'"></app-comment-item></mat-card-content>
+  <mat-divider></mat-divider>
+</mat-card>
 <app-comment-item *ngFor="let comment of commentArray; odd as isOdd" [comment]="comment" [ngClass]="isOdd ? 'is-odd' : 'is-even'" [appHoverHighlight]="'lightpink'"></app-comment-item>
-<p *ngIf="error" class="error">{{ error }}</p>
+<mat-dialog-content>
+  <app-error-dialog [error]="error"></app-error-dialog>
+</mat-dialog-content>
+

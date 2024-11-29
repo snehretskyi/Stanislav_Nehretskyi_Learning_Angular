@@ -39,11 +39,6 @@ button {
   font-size: 1rem;
 }
 
-button[type="submit"] {
-  background-color: cornflowerblue;
-  color: white;
-}
-
 button[type="button"] {
   background-color: #007BFF;
   color: white;

@@ -5,6 +5,9 @@ import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from "@angular/rou
 import {CommentService} from "../services/comment.service";
 import {CommentsListComponent} from "../comments-list/comments-list.component";
 import {CommentPunctuationPipe} from "../pipes/comment-punctuation.pipe";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-comment-item',
@@ -18,7 +21,10 @@ import {CommentPunctuationPipe} from "../pipes/comment-punctuation.pipe";
     TitleCasePipe,
     DatePipe,
     CurrencyPipe,
-    CommentPunctuationPipe
+    CommentPunctuationPipe,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   templateUrl: './comment-item.component.html',
   styleUrl: './comment-item.component.css'

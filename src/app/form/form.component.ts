@@ -8,6 +8,8 @@ import {CommentAuthor} from "../models/comment-author";
 import {NgForOf, NgIf} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-form',
@@ -18,7 +20,9 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
     ReactiveFormsModule,
     NgForOf,
     NgIf,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatButtonModule,
+    MatInputModule
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
