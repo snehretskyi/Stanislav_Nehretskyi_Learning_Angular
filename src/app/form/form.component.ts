@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-form',
@@ -22,7 +23,8 @@ import {MatInputModule} from "@angular/material/input";
     NgIf,
     HighlightOnFocusDirective,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'

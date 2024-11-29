@@ -8,11 +8,13 @@ import {CommentService} from "./services/comment.service";
 import {Comment} from "./models/comment";
 import {commentArray} from "./data/mock-content";
 import {Observable} from "rxjs";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, CommentsListComponent, CommentItemComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgForOf, NgIf, CommentsListComponent, CommentItemComponent, RouterLink, RouterLinkActive, MatToolbarModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

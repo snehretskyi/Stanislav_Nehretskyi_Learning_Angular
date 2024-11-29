@@ -1,12 +1,12 @@
 <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <mat-label>ID</mat-label>
-    <input type="number" id="id" formControlName="id" [appHighlightOnFocus] = "'red'" />
+    <input matTooltip="ID"  matInput type="number" id="id" formControlName="id" [appHighlightOnFocus] = "'red'" />
   </div>
 
   <div class="form-group">
     <mat-label>Author</mat-label>
-    <select id="author" formControlName="author" [appHighlightOnFocus] = "'lime'">
+    <select  matTooltip="Choose Author"  id="author" formControlName="author" [appHighlightOnFocus] = "'lime'">
       <option *ngFor="let author of authorsArray" [ngValue]="author">
         {{author.nickname}}
       </option>
@@ -16,12 +16,12 @@
 
   <div class="form-group">
     <mat-label>Body</mat-label>
-    <textarea type="text" id="body" formControlName="body" appHighlightOnFocus [appHighlightOnFocus] = "'blue'"></textarea>
+    <textarea  matTooltip="Body of the comment"  matInput type="text" id="body" formControlName="body" appHighlightOnFocus [appHighlightOnFocus] = "'blue'"></textarea>
   </div>
 
   <div class="form-group">
-    <mat-label for="likes">Likes</mat-label>
-    <input type="number" id="likes" formControlName="likes" appHighlightOnFocus [appHighlightOnFocus] = "'orange'"/>
+    <mat-label>Likes</mat-label>
+    <input  matTooltip="How many likes"  matInput type="number" id="likes" formControlName="likes" appHighlightOnFocus [appHighlightOnFocus] = "'orange'"/>
   </div>
 
   <button type="submit" mat-flat-button color="primary">Submit</button>
